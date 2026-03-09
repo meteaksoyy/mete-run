@@ -20,7 +20,7 @@ There are 2 kinds of pages here:
 
 ## I Like & Do
 
-My main focus is distributed systems and computer security. Outside of that, I enjoy weightlifting, tinkering with side projects, and occasionally touching grass.
+My main focus is distributed systems and computer security. Outside of that, I enjoy weightlifting, tinkering with side projects, gaming and occasionally touching grass.
 
 ## Need to Reach Out?
 <!-- NO EMAIL FOR YOU HARVESTING BOTS -->

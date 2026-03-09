@@ -5,7 +5,7 @@ title: Mete's Wiki
 - `whoami` &nbsp; A final year bachelor's student doing things with computers
 - `pwd` &nbsp;&nbsp;&nbsp;&nbsp; Somewhere in Europe
 - `ps -a` &nbsp;&nbsp; Too many open tabs
-- `uname -a` &nbsp; [CV / Resume](#)
+- `uname -a` &nbsp; [CV / Resume](/static/Mete_Aksoy-CV.pdf)
 
 ## So What's All This Then?
 
@@ -25,7 +25,7 @@ My main focus is distributed systems and computer security. Outside of that, I e
 ## Need to Reach Out?
 <!-- NO EMAIL FOR YOU HARVESTING BOTS -->
 - **Email:** <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#101;&#116;&#101;&#97;&#107;&#115;&#111;&#121;&#53;&#51;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#109;&#101;&#116;&#101;&#97;&#107;&#115;&#111;&#121;&#53;&#51;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
-- [LinkedIn](#)
+- [LinkedIn](https://www.linkedin.com/in/mete-aksoy/)
 
 ## 🕐 Latest Activity
 

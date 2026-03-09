@@ -2,6 +2,8 @@
 title: Mete's Wiki
 ---
 
+![GIF didn't load properly :(](/static/book.gif)
+
 - `whoami` &nbsp; A final year bachelor's student doing things with computers
 - `pwd` &nbsp;&nbsp;&nbsp;&nbsp; Somewhere in Europe
 - `ps -a` &nbsp;&nbsp; Too many open tabs
@@ -19,8 +21,6 @@ There are 2 kinds of pages here:
 ## I Like & Do
 
 My main focus is distributed systems and computer security. Outside of that, I enjoy weightlifting, tinkering with side projects, and occasionally touching grass.
-
-🐍 🦀 🐧 ☕ 🖥️
 
 ## Need to Reach Out?
 <!-- NO EMAIL FOR YOU HARVESTING BOTS -->

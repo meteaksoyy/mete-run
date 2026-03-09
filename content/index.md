@@ -5,22 +5,20 @@ title: Mete's Wiki
 <img src="/static/book.gif" alt="book gif" style="width: 20%; display: block; margin: 0 auto;" />
 
 - `whoami` &nbsp; A final year bachelor's student doing things with computers
-- `pwd` &nbsp;&nbsp;&nbsp;&nbsp; Somewhere in Europe
+- `pwd` &nbsp;&nbsp;&nbsp;&nbsp; Delft, The Netherlands
 - `ps -a` &nbsp;&nbsp; Too many open tabs
 - `uname -a` &nbsp; [CV / Resume](/static/Mete_Aksoy-CV.pdf)
 
-## So What's All This Then?
+## About
 
-I occasionally write things down after reading papers, attending talks, or just going down a rabbit hole at 2am. This is where those notes live — partly so I can find them later, partly in case they're useful to someone else.
+This is my little corner of the internet. I use it to dump notes after reading papers, sitting through talks, or going down a rabbit hole at 2am — partly so I can find things later, partly in case someone else finds them useful.
 
 There are 2 kinds of pages here:
 
 - **Blog Posts:** Something I actually finished and decided to share. These are public and listed [[blog/index|here]].
 - **Reading Notes:** Raw notes from papers and books. Expect roughness. Some may be locked if the related work isn't published yet.
 
-## I Like & Do
-
-My main focus is distributed systems and computer security. Outside of that, I enjoy weightlifting, tinkering with side projects, gaming and occasionally touching grass.
+I'm a final year CS bachelor's student at Delft University of Technology, based in Delft, Netherlands. Mostly interested in distributed systems and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
 
 ## Need to Reach Out?
 <!-- NO EMAIL FOR YOU HARVESTING BOTS -->

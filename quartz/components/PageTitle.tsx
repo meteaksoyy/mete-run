@@ -43,8 +43,8 @@ PageTitle.css = `
 }
 
 .home-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 0.85em;
+  height: 0.85em;
   opacity: 0.6;
   flex-shrink: 0;
   transition: opacity 0.2s ease;

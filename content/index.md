@@ -31,4 +31,3 @@ My main focus is distributed systems and computer security. Outside of that, I e
 
 | Note | Type | Date | Topic |
 |------|------|------|-------|
-| Example Note | 📄 | 2026-03-01 | #example |

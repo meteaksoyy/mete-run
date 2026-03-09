@@ -29,5 +29,6 @@ I'm a final year CS bachelor's student at Delft University of Technology, based 
 
 | Note | Type | Date | Topic |
 |------|------|------|-------|
+| [[2 AI/When the Agent Fights Back\|When the Agent Fights Back]] | Note | 2026-03-09 | AI, Agents |
 
 [[1 Projects/index|Projects]] · [[2 AI/index|AI]] · [[3 Distributed Systems/index|Distributed Systems]] · [[4 Math/index|Math]] · [[5 Security/index|Security]] · [[6 Miscellaneous/index|Miscellaneous]]

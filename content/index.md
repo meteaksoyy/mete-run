@@ -30,4 +30,4 @@ I'm a final year CS bachelor's student at Delft University of Technology, based 
 | Note | Type | Date | Topic |
 |------|------|------|-------|
 
-<span style="display:none">[[1 Projects/index|Projects]] [[2 AI/index|AI]] [[3 Distributed Systems/index|Distributed Systems]] [[4 Math/index|Math]] [[5 Security/index|Security]] [[6 Miscellaneous/index|Miscellaneous]]</span>
+[[1 Projects/index|Projects]] · [[2 AI/index|AI]] · [[3 Distributed Systems/index|Distributed Systems]] · [[4 Math/index|Math]] · [[5 Security/index|Security]] · [[6 Miscellaneous/index|Miscellaneous]]

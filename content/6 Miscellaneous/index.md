@@ -1,3 +1,5 @@
 ---
 title: Miscellaneous
+tags:
+  - miscellaneous
 ---

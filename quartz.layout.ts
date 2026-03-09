@@ -39,7 +39,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
-        const order = ["Projects", "AI", "Distributed Systems", "Math", "Security", "Misc"]
+        const order = ["Projects", "AI", "Distributed Systems", "Math", "Security", "Miscellaneous"]
         const aIdx = order.indexOf(a.displayName)
         const bIdx = order.indexOf(b.displayName)
         if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
@@ -76,7 +76,7 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
-        const order = ["Projects", "AI", "Distributed Systems", "Math", "Security", "Misc"]
+        const order = ["Projects", "AI", "Distributed Systems", "Math", "Security", "Miscellaneous"]
         const aIdx = order.indexOf(a.displayName)
         const bIdx = order.indexOf(b.displayName)
         if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx

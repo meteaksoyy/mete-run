@@ -2,7 +2,7 @@
 title: Mete's Wiki
 ---
 
-<img src="/static/book.gif" alt="book gif" style="width: 100%; max-height: 300px; object-fit: cover;" />
+<img src="/static/book.gif" alt="book gif" style="width: 100%; max-height: 400px; object-fit: cover;" />
 
 - `whoami` &nbsp; A final year bachelor's student doing things with computers
 - `pwd` &nbsp;&nbsp;&nbsp;&nbsp; Somewhere in Europe

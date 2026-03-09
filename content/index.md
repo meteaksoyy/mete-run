@@ -15,8 +15,8 @@ This is my little corner of the internet. I use it to dump notes after reading p
 
 There are 2 kinds of pages here:
 
-- **Blog Posts:** Something I actually finished and decided to share. These are public and listed [[blog/index|here]].
-- **Reading Notes:** Raw notes from papers and books. Expect roughness. Some may be locked if the related work isn't published yet.
+- **Blog Posts:** Something I actually finished and decided to share.
+- **Reading Notes:** Raw notes from papers and books. Expect roughness.
 
 I'm a final year CS bachelor's student at Delft University of Technology, based in Delft, Netherlands. Mostly interested in distributed systems and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
 

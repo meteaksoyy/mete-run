@@ -7,7 +7,7 @@ title: Mete's Wiki
 - `whoami` &nbsp; A final year bachelor's student doing things with computers
 - `pwd` &nbsp;&nbsp;&nbsp;&nbsp; Delft, The Netherlands
 - `ps -a` &nbsp;&nbsp; Too many open tabs
-- `uname -a` &nbsp; [CV / Resume](/static/Mete_Aksoy-CV.pdf)
+- `uname -a` &nbsp; [CV / Resume](/static/Mete_Aksoy_CV.pdf)
 
 ## About
 

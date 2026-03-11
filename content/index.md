@@ -18,7 +18,7 @@ There are 2 kinds of pages here:
 - **Blog Posts:** Something I actually finished and decided to share.
 - **Reading Notes:** Raw notes from papers and books. Expect roughness.
 
-I'm a final year CS bachelor's student at Delft University of Technology, based in Delft, Netherlands. Mostly interested in distributed systems and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
+I'm a final year CS bachelor's student at Delft University of Technology, based in Delft, Netherlands. Mostly interested in distributed systems, finance and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
 
 ## Need to Reach Out?
 <!-- NO EMAIL FOR YOU HARVESTING BOTS -->

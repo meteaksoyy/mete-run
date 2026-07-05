@@ -94,11 +94,14 @@ export function googleFontHref(theme: Theme) {
   return `https://fonts.googleapis.com/css2?family=${headerFont}&family=${bodyFont}&family=${codeFont}&display=swap`
 }
 
-export function googleFontSubsetHref(theme: Theme, text: string) {
+export function googleFontSubsetHref(theme: Theme, _text: string) {
   const title = theme.typography.title || theme.typography.header
   const titleFont = formatFontSpecification("title", title)
 
-  return `https://fonts.googleapis.com/css2?family=${titleFont}&text=${encodeURIComponent(text)}&display=swap`
+  // Load the FULL title font rather than subsetting to the page title: the
+  // title/display font is used for arbitrary display text across the site
+  // (hero wordmark, article titles, section headings), not just the page title.
+  return `https://fonts.googleapis.com/css2?family=${titleFont}&display=swap`
 }
 
 export interface GoogleFontFile {

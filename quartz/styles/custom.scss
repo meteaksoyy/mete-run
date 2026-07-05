@@ -100,12 +100,13 @@ h6 {
 }
 
 .article-title {
-  font-family: var(--titleFont) !important;
+  // lighter, uniform display (Space Grotesk regular) rather than heavy Anton
+  font-family: var(--headerFont) !important;
   text-transform: uppercase;
   font-weight: 400 !important;
-  font-size: clamp(2.6rem, 6vw, 5rem) !important;
-  line-height: 0.92;
-  letter-spacing: 0.005em;
+  font-size: clamp(2.2rem, 5vw, 4.2rem) !important;
+  line-height: 1.04;
+  letter-spacing: -0.005em;
   color: var(--dark);
   margin-bottom: 0.6rem;
 }

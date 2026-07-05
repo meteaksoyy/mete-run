@@ -27,13 +27,13 @@ const TOPICS: Topic[] = [
   },
   { n: "04", slug: "4-Math/", title: "Math", blurb: "Foundations worth revisiting." },
   { n: "05", slug: "5-Security/", title: "Security", blurb: "Exploits, evasion & defense." },
+  { n: "06", slug: "7-Finance/", title: "Finance", blurb: "Markets, risk & money." },
   {
-    n: "06",
+    n: "07",
     slug: "6-Miscellaneous/",
     title: "Miscellaneous",
     blurb: "Everything that didn't fit.",
   },
-  { n: "07", slug: "7-Finance/", title: "Finance", blurb: "Markets, risk & money." },
 ]
 
 function isRealNote(f: QuartzPluginData): boolean {
@@ -71,7 +71,7 @@ export default ((userOpts?: Partial<HeroOptions>) => {
                     Mete<span class="hero-accent">.</span>run
                   </h1>
                   <p class="hero-lede">
-                    Final-year CS student in Delft, dumping notes on{" "}
+                    Software Engineer in Delft, dumping notes on{" "}
                     <span class="hero-hl">distributed systems</span>,{" "}
                     <span class="hero-hl">security</span> &amp; <span class="hero-hl">finance</span>{" "}
                     — mostly so I can find them later.

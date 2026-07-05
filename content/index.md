@@ -11,7 +11,7 @@ There are 2 kinds of pages here:
 - **Blog Posts:** Something I actually finished and decided to share.
 - **Reading Notes:** Raw notes from papers and books. Expect roughness.
 
-I'm a final year CS bachelor's student at Delft University of Technology, based in Delft, Netherlands. Mostly interested in distributed systems, finance and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
+I'm a Software Engineer based in Delft, Netherlands, and a TU Delft graduate. Mostly interested in distributed systems, finance and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
 
 ## Need to Reach Out?
 
@@ -22,9 +22,10 @@ I'm a final year CS bachelor's student at Delft University of Technology, based 
 
 ## 🕐 Latest Activity
 
-| Note                                                            | Type | Date       | Topic      |
-| --------------------------------------------------------------- | ---- | ---------- | ---------- |
-| [[5 Security/Zombie ZIP\|Zombie ZIP]]                           | 📝   | 2026-03-10 | Security   |
-| [[2 AI/When the Agent Fights Back\|When the Agent Fights Back]] | 📝   | 2026-03-09 | AI, Agents |
+| Note                                                                                 | Type | Date       | Topic        |
+| ------------------------------------------------------------------------------------ | ---- | ---------- | ------------ |
+| [[1 Projects/Specification-Based Fault Localization\|Spec-Based Fault Localization]] | 🔬   | 2026-06-24 | Research, AI |
+| [[5 Security/Zombie ZIP\|Zombie ZIP]]                                                | 📝   | 2026-03-10 | Security     |
+| [[2 AI/When the Agent Fights Back\|When the Agent Fights Back]]                      | 📝   | 2026-03-09 | AI, Agents   |
 
-[[1 Projects/index|Projects]] · [[2 AI/index|AI]] · [[3 Distributed Systems/index|Distributed Systems]] · [[4 Math/index|Math]] · [[5 Security/index|Security]] · [[6 Miscellaneous/index|Miscellaneous]] · [[7 Finance/index|Finance]]
+[[1 Projects/index|Projects]] · [[2 AI/index|AI]] · [[3 Distributed Systems/index|Distributed Systems]] · [[4 Math/index|Math]] · [[5 Security/index|Security]] · [[7 Finance/index|Finance]] · [[6 Miscellaneous/index|Miscellaneous]]

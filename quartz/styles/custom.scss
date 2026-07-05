@@ -15,10 +15,6 @@
   --brand-2: #6366f1; // indigo
   --brand-3: #0ea5e9; // sky
 
-  --aurora-1: rgba(124, 58, 237, 0.1);
-  --aurora-2: rgba(99, 102, 241, 0.09);
-  --aurora-3: rgba(14, 165, 233, 0.07);
-
   --grid-line: rgba(76, 58, 120, 0.05);
   --card: rgba(255, 255, 255, 0.55);
   --card-border: rgba(76, 58, 120, 0.12);
@@ -32,10 +28,6 @@
   --brand-2: #7c3aed;
   --brand-3: #c084fc;
 
-  --aurora-1: rgba(168, 85, 247, 0.2);
-  --aurora-2: rgba(124, 58, 237, 0.16);
-  --aurora-3: rgba(56, 189, 248, 0.1);
-
   --grid-line: rgba(180, 150, 240, 0.06);
   --card: rgba(41, 29, 64, 0.5);
   --card-border: rgba(180, 150, 240, 0.14);
@@ -45,44 +37,18 @@
 }
 
 /* -------------------------------------------------------------------------
-   2. Ambient background — soft aurora wash + fine grid mesh (no glare)
+   2. Ambient background — fine dot-grid mesh only (no glare / glow blobs)
    ------------------------------------------------------------------------- */
-body::before,
 body::after {
   content: "";
   position: fixed;
   pointer-events: none;
   inset: 0;
-}
-
-// aurora colour wash, drifting slowly
-body::before {
-  z-index: -2;
-  inset: -25%;
-  background:
-    radial-gradient(38% 44% at 16% 20%, var(--aurora-1), transparent 68%),
-    radial-gradient(40% 42% at 84% 26%, var(--aurora-2), transparent 70%),
-    radial-gradient(48% 52% at 62% 96%, var(--aurora-3), transparent 74%);
-  animation: aurora-drift 40s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-// fine dot-grid texture
-body::after {
   z-index: -1;
   background-image: radial-gradient(var(--grid-line) 1px, transparent 1.4px);
   background-size: 26px 26px;
   background-position: -13px -13px;
-  mask-image: radial-gradient(120% 120% at 50% 0%, #000 55%, transparent 100%);
-}
-
-@keyframes aurora-drift {
-  0% {
-    transform: translate3d(-2%, -1%, 0) scale(1);
-  }
-  100% {
-    transform: translate3d(3%, 2%, 0) scale(1.08);
-  }
+  mask-image: radial-gradient(160% 130% at 50% -10%, #000 62%, transparent 100%);
 }
 
 /* -------------------------------------------------------------------------
@@ -499,23 +465,13 @@ body[data-slug="index"] {
   border-radius: 18px;
   overflow: hidden;
   isolation: isolate;
-  background:
-    radial-gradient(
-      62% 80% at 12% 8%,
-      color-mix(in oklab, var(--brand-1) 24%, transparent),
-      transparent 58%
-    ),
-    radial-gradient(
-      58% 78% at 92% 96%,
-      color-mix(in oklab, var(--brand-3) 20%, transparent),
-      transparent 60%
-    ),
-    radial-gradient(
-      50% 60% at 76% 12%,
-      color-mix(in oklab, var(--brand-2) 16%, transparent),
-      transparent 62%
-    ),
-    var(--light);
+  // even, low-contrast diagonal wash — no radial glow / spotlight
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklab, var(--brand-1) 9%, var(--light)) 0%,
+    var(--light) 48%,
+    color-mix(in oklab, var(--brand-3) 7%, var(--light)) 100%
+  );
 }
 
 // grid texture on top of the hero gradient
@@ -1034,9 +990,6 @@ body[data-slug="index"] {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  body::before {
-    animation: none;
   }
   .hero-dot-live,
   .hero-hint-line::after {

@@ -14,25 +14,39 @@ const defaultOptions: HeroOptions = {
   featuredLimit: 3,
 }
 
-type Topic = { n: string; slug: string; title: string; blurb: string }
+type Topic = { n: string; slug: string; title: string; blurb: string; fx: string }
 
 const TOPICS: Topic[] = [
-  { n: "01", slug: "1-Projects/", title: "Projects", blurb: "Things I've built and shipped." },
-  { n: "02", slug: "2-AI/", title: "AI", blurb: "Agents, papers & the frontier." },
+  {
+    n: "01",
+    slug: "1-Projects/",
+    title: "Projects",
+    blurb: "Things I've built and shipped.",
+    fx: "ship",
+  },
+  { n: "02", slug: "2-AI/", title: "AI", blurb: "Agents, papers & the frontier.", fx: "cursor" },
   {
     n: "03",
     slug: "3-Distributed-Systems/",
     title: "Distributed Systems",
     blurb: "Consensus, replication, failure.",
+    fx: "ping",
   },
-  { n: "04", slug: "4-Math/", title: "Math", blurb: "Foundations worth revisiting." },
-  { n: "05", slug: "5-Security/", title: "Security", blurb: "Exploits, evasion & defense." },
-  { n: "06", slug: "7-Finance/", title: "Finance", blurb: "Markets, risk & money." },
+  { n: "04", slug: "4-Math/", title: "Math", blurb: "Foundations worth revisiting.", fx: "math" },
+  {
+    n: "05",
+    slug: "5-Security/",
+    title: "Security",
+    blurb: "Exploits, evasion & defense.",
+    fx: "scramble",
+  },
+  { n: "06", slug: "7-Finance/", title: "Finance", blurb: "Markets, risk & money.", fx: "ticker" },
   {
     n: "07",
     slug: "6-Miscellaneous/",
     title: "Miscellaneous",
     blurb: "Everything that didn't fit.",
+    fx: "glitch",
   },
 ]
 
@@ -111,9 +125,27 @@ export default ((userOpts?: Partial<HeroOptions>) => {
             <ul class="hero-index">
               {TOPICS.map((t, i) => (
                 <li class="hero-reveal" style={`--ri:${i + 1}`}>
-                  <a class="hero-index-row internal" href={`./${t.slug}`} data-no-popover>
+                  <a
+                    class="hero-index-row internal"
+                    href={`./${t.slug}`}
+                    data-no-popover
+                    data-fx={t.fx}
+                  >
                     <span class="hero-index-no">N0.{t.n}</span>
-                    <span class="hero-index-title">{t.title}</span>
+                    <span class="hero-index-title">
+                      <span class="hero-index-word" data-text={t.title}>
+                        {t.title}
+                      </span>
+                      <span class="hero-fx" aria-hidden="true">
+                        {t.fx === "ping" && (
+                          <>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                          </>
+                        )}
+                      </span>
+                    </span>
                     <span class="hero-index-blurb">{t.blurb}</span>
                     <span class="hero-index-arrow" aria-hidden="true">
                       →

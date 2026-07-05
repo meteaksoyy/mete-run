@@ -17,12 +17,25 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
+      component: Component.Hero(),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.TagList(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
   left: [
     Component.PageTitle(),
@@ -39,14 +52,25 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
-        const order = ["Projects", "AI", "Distributed Systems", "Math", "Security", "Finance", "Miscellaneous"]
+        const order = [
+          "Projects",
+          "AI",
+          "Distributed Systems",
+          "Math",
+          "Security",
+          "Finance",
+          "Miscellaneous",
+        ]
         const aIdx = order.indexOf(a.displayName)
         const bIdx = order.indexOf(b.displayName)
         if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
         if (aIdx !== -1) return -1
         if (bIdx !== -1) return 1
         if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
-          return a.displayName.localeCompare(b.displayName, undefined, { numeric: true, sensitivity: "base" })
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
         }
         return a.isFolder ? -1 : 1
       },
@@ -76,14 +100,25 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
-        const order = ["Projects", "AI", "Distributed Systems", "Math", "Security", "Finance", "Miscellaneous"]
+        const order = [
+          "Projects",
+          "AI",
+          "Distributed Systems",
+          "Math",
+          "Security",
+          "Finance",
+          "Miscellaneous",
+        ]
         const aIdx = order.indexOf(a.displayName)
         const bIdx = order.indexOf(b.displayName)
         if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
         if (aIdx !== -1) return -1
         if (bIdx !== -1) return 1
         if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
-          return a.displayName.localeCompare(b.displayName, undefined, { numeric: true, sensitivity: "base" })
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
         }
         return a.isFolder ? -1 : 1
       },

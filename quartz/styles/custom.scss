@@ -46,30 +46,18 @@
 }
 
 /* -------------------------------------------------------------------------
-   2. Ambient background — fine grid + film grain (warm, no glare)
+   2. Ambient background — flat warm dark + subtle film grain (Bucks-style)
    ------------------------------------------------------------------------- */
-body::before,
-body::after {
+// film grain over the flat background colour (no grid lines)
+body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: -1;
-}
-
-// film grain
-body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity: var(--grain-opacity);
   mix-blend-mode: overlay;
-}
-
-// fine grid mesh
-body::after {
-  background-image: radial-gradient(var(--grid-line) 1px, transparent 1.4px);
-  background-size: 30px 30px;
-  background-position: -15px -15px;
-  mask-image: radial-gradient(150% 130% at 50% -10%, #000 62%, transparent 100%);
 }
 
 /* -------------------------------------------------------------------------
@@ -488,58 +476,55 @@ body[data-slug="index"] {
 .hero {
   position: relative;
   --hero-pad: clamp(1.5rem, 6vw, 7rem);
-}
-
-.hero-track {
-  position: relative;
-}
-
-.hero-stage {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  isolation: isolate;
   background: var(--hero-bg);
   color: var(--dark);
 }
 
-// grid texture on the hero
-.hero-stage::before {
+// subtle grain over the flat hero background (no grid lines)
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 58px 58px;
-  mask-image: radial-gradient(130% 110% at 50% 30%, #000 55%, transparent 96%);
   pointer-events: none;
-}
-
-.hero-rail {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
 }
 
 .hero-panel {
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
   width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: clamp(2.5rem, 7vh, 4.5rem) var(--hero-pad);
-  border-bottom: 1px solid var(--card-border);
-}
-.hero-panel:last-child {
-  border-bottom: none;
+  padding: clamp(3rem, 9vh, 6.5rem) var(--hero-pad);
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
-.hero-panel-inner {
+.hero-panel-inner,
+.hero-intro {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
+}
+
+/* reveal-on-scroll: elements rise + fade in as each panel arrives */
+.hero.reveal-ready .hero-reveal {
+  opacity: 0;
+  transform: translateY(46px);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 0.7, 0.2, 1),
+    transform 0.75s cubic-bezier(0.16, 0.7, 0.2, 1);
+  transition-delay: calc(var(--ri, 0) * 85ms);
+  will-change: opacity, transform;
+}
+.hero.reveal-ready .hero-reveal.is-in {
+  opacity: 1;
+  transform: none;
 }
 
 /* ---- shared ---- */
@@ -892,130 +877,64 @@ body[data-slug="index"] {
   transition: transform 0.2s ease;
 }
 
-/* ---- chrome ---- */
-.hero-chrome {
-  display: none;
-}
-.hero-dots {
-  position: absolute;
-  left: var(--hero-pad);
-  bottom: 1.7rem;
-  display: flex;
-  gap: 0.5rem;
-  z-index: 3;
-}
-.hero-dot {
-  width: 8px;
-  height: 8px;
-  background: color-mix(in srgb, var(--dark) 25%, transparent);
-  transition:
-    width 0.25s ease,
-    background-color 0.25s ease;
-  &.is-active {
-    width: 28px;
-    background: var(--accent);
-  }
-}
-.hero-progress {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  background: color-mix(in srgb, var(--dark) 8%, transparent);
-  z-index: 3;
-}
-.hero-progress-bar {
-  display: block;
-  height: 100%;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  background: var(--accent);
-}
-.hero-hint {
-  position: absolute;
-  right: var(--hero-pad);
-  bottom: 1.6rem;
-  display: flex;
+/* ---- scroll cue (intro panel) ---- */
+.hero-scrollcue {
+  display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  margin-top: 2.6rem;
   font-family: var(--codeFont);
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  z-index: 3;
 }
-.hero-hint-line {
-  position: relative;
-  width: 46px;
-  height: 1px;
-  background: color-mix(in srgb, var(--accent) 40%, transparent);
-  overflow: hidden;
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    width: 40%;
-    background: var(--accent);
-    animation: hero-hint-slide 1.8s ease-in-out infinite;
-  }
+.hero-scrollcue-arrow {
+  display: inline-block;
+  animation: hero-bob 1.8s ease-in-out infinite;
 }
-@keyframes hero-hint-slide {
-  0% {
-    transform: translateX(-110%);
-  }
+@keyframes hero-bob {
+  0%,
   100% {
-    transform: translateX(260%);
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
   }
 }
 
-/* ---- pinned (horizontal) mode: desktop + motion only ---- */
+/* ---- desktop: full-bleed hero + gentle vertical scroll-snap ---- */
 @media all and ($desktop) {
-  .hero.hero--pinned {
+  body[data-slug="index"] .hero {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     z-index: 5;
   }
-  .hero--pinned .hero-stage {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    border-radius: 0;
+  html:has(body[data-slug="index"]) {
+    scroll-snap-type: y proximity;
   }
-  .hero--pinned .hero-rail {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    height: 100vh;
-    will-change: transform;
-  }
-  .hero--pinned .hero-panel {
-    flex: 0 0 100%;
-    width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    border-bottom: none;
-    padding-inline: clamp(3rem, 9vw, 11rem);
-  }
-  .hero--pinned .hero-chrome {
-    display: block;
-  }
-  // reveal the blurb column only when there is room (pinned/wide)
-  .hero--pinned .hero-index-row {
+  .hero-index-row {
     grid-template-columns: 5rem 1fr 1.4fr auto;
   }
-  .hero--pinned .hero-index-blurb {
+  .hero-index-blurb {
     display: block;
   }
 }
 
 /* -------------------------------------------------------------------------
-   12. Reduced motion — freeze + stack the hero
+   12. Mobile + reduced motion
    ------------------------------------------------------------------------- */
 @media all and ($mobile) {
   .hero-panel {
-    padding: 2.75rem 1.25rem;
+    min-height: auto;
+    padding: 3.5rem 1.25rem;
+    scroll-snap-align: none;
+  }
+  .hero-index-row {
+    grid-template-columns: 3.5rem 1fr;
+  }
+  .hero-index-arrow {
+    display: none;
   }
 }
 
@@ -1023,9 +942,17 @@ body[data-slug="index"] {
   html {
     scroll-behavior: auto;
   }
+  html:has(body[data-slug="index"]) {
+    scroll-snap-type: none;
+  }
   .hero-mark,
-  .hero-hint-line::after {
+  .hero-scrollcue-arrow {
     animation: none;
+  }
+  .hero.reveal-ready .hero-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
   * {
     scroll-behavior: auto !important;

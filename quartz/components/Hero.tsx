@@ -64,17 +64,17 @@ export default ((userOpts?: Partial<HeroOptions>) => {
               <div class="hero-panel hero-panel--intro" role="group" aria-label="Welcome">
                 <div class="hero-intro">
                   <p class="hero-eyebrow">
-                    <span class="hero-dot-live" aria-hidden="true"></span>
-                    Personal wiki &amp; notebook
+                    <span class="hero-mark" aria-hidden="true"></span>
+                    Personal wiki &amp; notebook — Delft, NL
                   </p>
                   <h1 class="hero-wordmark">
                     Mete<span class="hero-accent">.</span>run
                   </h1>
                   <p class="hero-lede">
-                    Software Engineer in Delft, dumping notes on{" "}
+                    Field notes from a software engineer —{" "}
                     <span class="hero-hl">distributed systems</span>,{" "}
-                    <span class="hero-hl">security</span> &amp; <span class="hero-hl">finance</span>{" "}
-                    — mostly so I can find them later.
+                    <span class="hero-hl">security</span> &amp; the occasional 2&thinsp;a.m.{" "}
+                    <span class="hero-hl">rabbit hole</span>.
                   </p>
                   <div class="hero-term" aria-hidden="true">
                     <div class="hero-term-bar">
@@ -84,7 +84,8 @@ export default ((userOpts?: Partial<HeroOptions>) => {
                     </div>
                     <div class="hero-term-body">
                       <p>
-                        <span class="tok-cmd">whoami</span> does things with computers
+                        <span class="tok-cmd">whoami</span> software engineer, does things with
+                        computers
                       </p>
                       <p>
                         <span class="tok-cmd">pwd</span> Delft, The Netherlands
@@ -107,22 +108,22 @@ export default ((userOpts?: Partial<HeroOptions>) => {
               <div class="hero-panel hero-panel--topics" role="group" aria-label="Topics">
                 <div class="hero-panel-inner">
                   <p class="hero-kicker">
-                    <span class="hero-index">02</span> What I write about
+                    <span class="hero-kicker-no">02 / 04</span> What I write about
                   </p>
-                  <div class="hero-topics">
+                  <ul class="hero-index">
                     {TOPICS.map((t) => (
-                      <a class="hero-topic internal" href={`./${t.slug}`} data-no-popover>
-                        <span class="hero-topic-n">{t.n}</span>
-                        <span class="hero-topic-body">
-                          <span class="hero-topic-title">{t.title}</span>
-                          <span class="hero-topic-blurb">{t.blurb}</span>
-                        </span>
-                        <span class="hero-topic-arrow" aria-hidden="true">
-                          →
-                        </span>
-                      </a>
+                      <li>
+                        <a class="hero-index-row internal" href={`./${t.slug}`} data-no-popover>
+                          <span class="hero-index-no">N0.{t.n}</span>
+                          <span class="hero-index-title">{t.title}</span>
+                          <span class="hero-index-blurb">{t.blurb}</span>
+                          <span class="hero-index-arrow" aria-hidden="true">
+                            →
+                          </span>
+                        </a>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
 
@@ -130,17 +131,22 @@ export default ((userOpts?: Partial<HeroOptions>) => {
               <div class="hero-panel hero-panel--featured" role="group" aria-label="Recent notes">
                 <div class="hero-panel-inner">
                   <p class="hero-kicker">
-                    <span class="hero-index">03</span> Latest from the notebook
+                    <span class="hero-kicker-no">03 / 04</span> From the notebook
                   </p>
                   <div class="hero-notes">
-                    {featured.map((page) => {
+                    {featured.map((page, i) => {
                       const title = page.frontmatter?.title
                       const tags = (page.frontmatter?.tags ?? []).slice(0, 3)
                       const href = resolveRelative(fileData.slug!, page.slug!)
                       return (
                         <a class="hero-note internal" href={href}>
-                          <span class="hero-note-meta">
-                            {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
+                          <span class="hero-note-top">
+                            <span class="hero-note-no">{String(i + 1).padStart(2, "0")}</span>
+                            <span class="hero-note-meta">
+                              {page.dates && (
+                                <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                              )}
+                            </span>
                           </span>
                           <span class="hero-note-title">{title}</span>
                           {page.description && (
@@ -148,7 +154,7 @@ export default ((userOpts?: Partial<HeroOptions>) => {
                           )}
                           <span class="hero-note-tags">
                             {tags.map((tag) => (
-                              <span class="hero-note-tag">#{tag}</span>
+                              <span class="hero-note-tag">{tag}</span>
                             ))}
                           </span>
                         </a>
@@ -162,9 +168,13 @@ export default ((userOpts?: Partial<HeroOptions>) => {
               <div class="hero-panel hero-panel--contact" role="group" aria-label="Contact">
                 <div class="hero-panel-inner hero-contact">
                   <p class="hero-kicker">
-                    <span class="hero-index">04</span> Say hello
+                    <span class="hero-kicker-no">04 / 04</span> Say hello
                   </p>
-                  <h2 class="hero-contact-title">Let's talk.</h2>
+                  <h2 class="hero-contact-title">
+                    Let's
+                    <br />
+                    talk<span class="hero-accent">.</span>
+                  </h2>
                   <div class="hero-links">
                     <a class="hero-link hero-email" href="#" rel="nofollow">
                       Email
@@ -199,7 +209,7 @@ export default ((userOpts?: Partial<HeroOptions>) => {
                 <span class="hero-progress-bar"></span>
               </div>
               <div class="hero-hint">
-                <span class="hero-hint-label">scroll</span>
+                <span class="hero-hint-label">Scroll</span>
                 <span class="hero-hint-line"></span>
               </div>
             </div>

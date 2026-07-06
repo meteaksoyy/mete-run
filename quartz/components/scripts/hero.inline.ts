@@ -83,7 +83,7 @@ function setupTopicEffects(hero: HTMLElement) {
             slot.textContent = "[✔]"
             slot.classList.add("fx-done")
           }
-        }, 55)
+        }, 220)
       }
       leave = () => {
         stop()
@@ -102,7 +102,7 @@ function setupTopicEffects(hero: HTMLElement) {
       enter = () => {
         stop()
         const start = performance.now()
-        const dur = 620
+        const dur = 2480
         const tick = (now: number) => {
           const p = Math.min((now - start) / dur, 1)
           const reveal = p * original.length
@@ -128,7 +128,7 @@ function setupTopicEffects(hero: HTMLElement) {
         slot.classList.toggle("fx-up", up)
         slot.classList.toggle("fx-down", !up)
         const start = performance.now()
-        const dur = 520
+        const dur = 2080
         const tick = (now: number) => {
           const p = Math.min((now - start) / dur, 1)
           const val = (target * p).toFixed(2)

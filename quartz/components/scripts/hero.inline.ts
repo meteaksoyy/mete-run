@@ -83,7 +83,7 @@ function setupTopicEffects(hero: HTMLElement) {
             slot.textContent = "[✔]"
             slot.classList.add("fx-done")
           }
-        }, 220)
+        }, 110)
       }
       leave = () => {
         stop()

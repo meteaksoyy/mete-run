@@ -81,7 +81,7 @@ export default ((userOpts?: Partial<HeroOptions>) => {
             </h1>
             <p class="hero-lede hero-reveal" style="--ri:2">
               Field notes from a software engineer —{" "}
-              <span class="hero-hl">distributed systems</span>,{" "}
+              <span class="hero-hl">AI</span>, <span class="hero-hl">distributed systems</span>,{" "}
               <span class="hero-hl">security</span> &amp; the occasional 2&thinsp;a.m.{" "}
               <span class="hero-hl">rabbit hole</span>.
             </p>

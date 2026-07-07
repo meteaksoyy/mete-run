@@ -11,7 +11,7 @@ There are 2 kinds of pages here:
 - **Blog Posts:** Something I actually finished and decided to share.
 - **Reading Notes:** Raw notes from papers and books. Expect roughness.
 
-I'm a Software Engineer based in Delft, Netherlands, and a TU Delft graduate. Mostly interested in distributed systems, finance and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
+I'm a Software Engineer based in Delft, Netherlands, and a TU Delft graduate. Mostly interested in AI, distributed systems, finance and computer security. Outside of that I lift, game, tinker with side projects, and occasionally touch grass.
 
 ## Need to Reach Out?
 
